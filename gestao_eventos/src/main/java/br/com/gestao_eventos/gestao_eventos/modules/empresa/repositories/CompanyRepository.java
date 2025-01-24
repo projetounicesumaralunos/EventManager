@@ -9,5 +9,6 @@ import br.com.gestao_eventos.gestao_eventos.modules.empresa.entities.CompanyEnti
 
 public interface CompanyRepository extends JpaRepository<CompanyEntity, UUID>{
     Optional<CompanyEntity> findByCnpjOrEmail(String cnpj, String email);
+    Optional<CompanyEntity> findByCnpj(String cnpj);
 }
     

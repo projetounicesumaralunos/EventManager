@@ -6,15 +6,19 @@ import java.util.UUID;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.br.CNPJ;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+// @Builder
 @Entity(name = "company")
 public class CompanyEntity {
 
@@ -28,6 +32,7 @@ public class CompanyEntity {
     private String password;
 
     // @CNPJ(message = "O campo deve conter um CNPJ válido")
+    @Column(nullable = false, unique = true)
     private String cnpj;
 
     @Email(message = "O campo deve conter um email válido")
