@@ -1,4 +1,4 @@
-package br.com.gestao_eventos.gestao_eventos.modules.empresa.controllers;
+package br.com.gestao_eventos.back_end.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.gestao_eventos.gestao_eventos.modules.empresa.entities.CompanyEntity;
-import br.com.gestao_eventos.gestao_eventos.modules.empresa.useCases.CreateCompanyUseCase;
+import br.com.gestao_eventos.back_end.domain.CompanyEntity;
+import br.com.gestao_eventos.back_end.service.CreateCompanyUseCase;
 import jakarta.validation.Valid;
 
 @RestController

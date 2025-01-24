@@ -31,4 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
-application.properties
+*.properties
+EventManager\gestao_eventos\src\main\resources\application.properties
+gestao_eventos/src/main/resources/application.properties
+gestao_eventos/docker-compose.yml

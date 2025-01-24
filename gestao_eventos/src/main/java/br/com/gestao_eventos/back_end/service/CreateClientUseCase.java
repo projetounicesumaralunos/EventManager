@@ -1,11 +1,11 @@
-package br.com.gestao_eventos.gestao_eventos.modules.cliente.useCases;
+package br.com.gestao_eventos.back_end.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.gestao_eventos.gestao_eventos.exceptions.UserFoundException;
-import br.com.gestao_eventos.gestao_eventos.modules.cliente.entities.ClientEntity;
-import br.com.gestao_eventos.gestao_eventos.modules.cliente.repositories.ClientRepository;
+import br.com.gestao_eventos.back_end.domain.ClientEntity;
+import br.com.gestao_eventos.back_end.exceptions.UserFoundException;
+import br.com.gestao_eventos.back_end.repository.ClientRepository;
 
 @Service
 public class CreateClientUseCase {

@@ -1,13 +1,13 @@
-package br.com.gestao_eventos.gestao_eventos;
+package br.com.gestao_eventos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GestaoEventosApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GestaoEventosApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

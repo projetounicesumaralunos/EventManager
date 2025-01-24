@@ -1,4 +1,4 @@
-package br.com.gestao_eventos.gestao_eventos.security;
+package br.com.gestao_eventos.back_end.security;
 
 import org.hibernate.validator.constraints.br.CNPJ;
 import org.springframework.context.annotation.Bean;
