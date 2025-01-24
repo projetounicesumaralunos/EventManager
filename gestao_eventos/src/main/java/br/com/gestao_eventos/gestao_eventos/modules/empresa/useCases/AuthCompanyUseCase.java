@@ -17,8 +17,8 @@ import br.com.gestao_eventos.gestao_eventos.modules.empresa.repositories.Company
 @Service
 public class AuthCompanyUseCase {
 
-    @Value("${security.token.secret}")
-    private String secretKey;
+    // @Value("${security.token.secret}")
+    // private String secretKey;
     
     @Autowired
     private CompanyRepository companyRepository;
@@ -38,9 +38,9 @@ public class AuthCompanyUseCase {
             throw new AuthenticationException();
         }
 
-        Algorithm algorithm = Algorithm.HMAC256(secretKey);
-        JWT.create().withIssuer("madebyou")
-        .withSubject(company.getId().toString());
+        // Algorithm algorithm = Algorithm.HMAC256(secretKey);
+        // JWT.create().withIssuer("madebyou")
+        // .withSubject(company.getId().toString());
 
     }
 }
