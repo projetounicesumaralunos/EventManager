@@ -1,4 +1,4 @@
-package br.com.gestao_eventos.gestao_eventos.exceptions;
+package br.com.gestao_eventos.back_end.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;

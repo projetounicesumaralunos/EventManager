@@ -1,4 +1,4 @@
-package br.com.gestao_eventos.gestao_eventos.modules.empresa.dto;
+package br.com.gestao_eventos.back_end.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

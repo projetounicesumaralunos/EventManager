@@ -1,4 +1,4 @@
-package br.com.gestao_eventos.gestao_eventos.modules.empresa.useCases;
+package br.com.gestao_eventos.back_end.service;
 
 import javax.naming.AuthenticationException;
 
@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 
-import br.com.gestao_eventos.gestao_eventos.modules.empresa.dto.AuthCompanyDTO;
-import br.com.gestao_eventos.gestao_eventos.modules.empresa.repositories.CompanyRepository;
+import br.com.gestao_eventos.back_end.dto.AuthCompanyDTO;
+import br.com.gestao_eventos.back_end.repository.CompanyRepository;
 
 @Service
 public class AuthCompanyUseCase {
@@ -38,9 +38,9 @@ public class AuthCompanyUseCase {
             throw new AuthenticationException();
         }
 
-        // Algorithm algorithm = Algorithm.HMAC256(secretKey);
-        // JWT.create().withIssuer("madebyou")
-        // .withSubject(company.getId().toString());
+        Algorithm algorithm = Algorithm.HMAC256("");
+        JWT.create().withIssuer("eventmanager")
+        .withSubject(company.getId().toString());
 
     }
 }

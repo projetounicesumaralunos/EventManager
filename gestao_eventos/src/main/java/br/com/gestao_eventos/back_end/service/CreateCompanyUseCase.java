@@ -1,12 +1,12 @@
-package br.com.gestao_eventos.gestao_eventos.modules.empresa.useCases;
+package br.com.gestao_eventos.back_end.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import br.com.gestao_eventos.gestao_eventos.exceptions.UserFoundException;
-import br.com.gestao_eventos.gestao_eventos.modules.empresa.entities.CompanyEntity;
-import br.com.gestao_eventos.gestao_eventos.modules.empresa.repositories.CompanyRepository;
+import br.com.gestao_eventos.back_end.domain.CompanyEntity;
+import br.com.gestao_eventos.back_end.exceptions.UserFoundException;
+import br.com.gestao_eventos.back_end.repository.CompanyRepository;
 
 @Service
 public class CreateCompanyUseCase {

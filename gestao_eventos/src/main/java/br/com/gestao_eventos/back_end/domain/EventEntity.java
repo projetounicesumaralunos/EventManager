@@ -1,4 +1,4 @@
-package br.com.gestao_eventos.gestao_eventos.modules.empresa.entities;
+package br.com.gestao_eventos.back_end.domain;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
