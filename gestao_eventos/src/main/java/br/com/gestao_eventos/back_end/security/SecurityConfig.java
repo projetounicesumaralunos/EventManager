@@ -24,6 +24,7 @@ public class SecurityConfig {
             auth
                 .requestMatchers("/client/").permitAll()
                 .requestMatchers("/company/").permitAll()
+                .requestMatchers("/event/").permitAll()
                 .requestMatchers("/auth/company").permitAll();
             auth.anyRequest().authenticated();
             
