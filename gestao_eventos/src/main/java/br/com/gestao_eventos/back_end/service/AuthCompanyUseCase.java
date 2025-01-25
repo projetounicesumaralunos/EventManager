@@ -1,5 +1,8 @@
 package br.com.gestao_eventos.back_end.service;
 
+import java.time.Duration;
+import java.time.Instant;
+
 import javax.naming.AuthenticationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +20,8 @@ import br.com.gestao_eventos.back_end.repository.CompanyRepository;
 @Service
 public class AuthCompanyUseCase {
 
-    // @Value("${security.token.secret}")
-    // private String secretKey;
+    @Value("${security.token.secret}")
+    private String secretKey;
     
     @Autowired
     private CompanyRepository companyRepository;
@@ -26,10 +29,11 @@ public class AuthCompanyUseCase {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public void execute(AuthCompanyDTO authCompanyDTO) throws AuthenticationException {
-        var company = this.companyRepository.findByCnpj(authCompanyDTO.getCnpj()).orElseThrow(
+    public String execute(AuthCompanyDTO authCompanyDTO) throws AuthenticationException {
+        var company = this.companyRepository.findByEmail(authCompanyDTO.getEmail()).orElseThrow(
             () -> {
-                throw new UsernameNotFoundException("Cnpj não encontrado");
+                    throw new UsernameNotFoundException("Email não encontrado");
+
             });
 
         var passwordMatches = this.passwordEncoder.matches(authCompanyDTO.getPassword(), company.getPassword());
@@ -38,9 +42,12 @@ public class AuthCompanyUseCase {
             throw new AuthenticationException();
         }
 
-        Algorithm algorithm = Algorithm.HMAC256("");
-        JWT.create().withIssuer("eventmanager")
-        .withSubject(company.getId().toString());
-
+        Algorithm algorithm = Algorithm.HMAC256(secretKey);
+        
+        var token = JWT.create().withIssuer("eventmanager")
+                .withExpiresAt(Instant.now().plus(Duration.ofHours(2)))
+                .withSubject(company.getId().toString())
+                .sign(algorithm);
+        return token;
     }
 }

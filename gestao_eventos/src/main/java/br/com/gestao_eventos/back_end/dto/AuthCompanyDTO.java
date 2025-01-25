@@ -9,5 +9,7 @@ public class AuthCompanyDTO {
 
     private String password;
     private String cnpj;
+    private String email;
+    
     
 }
