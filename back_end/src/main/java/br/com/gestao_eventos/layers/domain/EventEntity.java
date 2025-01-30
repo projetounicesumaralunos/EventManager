@@ -20,45 +20,29 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity(name = "event")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class EventEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Enumerated(EnumType.STRING)
-    @NotNull(message = "Insira uma opção válida: [CASAMENTO, ANIVERSARIO, NOIVADO, CHURRASCO, FESTA_FORMATURA, FESTA_QUINZE_ANOS, HAPPY_HOUR]")
-    private EventType eventType;
+    private String description;
 
-    public enum EventType {
-        CASAMENTO,
-        ANIVERSARIO,
-        NOIVADO,
-        CHURRASCO,
-        FESTA_FORMATURA,
-        FESTA_QUINZE_ANOS,
-        HAPPY_HOUR
-    }
+    @NotBlank(message = "O campo [eventType] não pode ser vazio")
+    private String eventType;
 
-    @Enumerated(EnumType.STRING)
-    @NotNull(message = "Insira uma opção válida: [CHURRASCO, PIZZAS, HAMBURGUERES, SUSHI, FRIOS, SORVETES, BEBIDAS_ALCOOLICAS, BEBIDAS_NAO_ALCOOLICAS, COMPLETO]")
-    private BuffetType buffetType;
-
-    public enum BuffetType {
-        CHURRASCO,
-        PIZZAS,
-        BEBIDAS_ALCOOLICAS,
-        BEBIDAS_NAO_ALCOOLICAS,
-        HAMBURGUERES,
-        SUSHI,
-        SORVETES,
-        FRIOS,
-        COMPLETO
-    }
+    @NotBlank(message = "O campo [BuffetType] não pode ser vazio")
+    public String buffetType;
 
     @NotBlank(message = "O campo [location] não pode ser vazio")
     private String location;
