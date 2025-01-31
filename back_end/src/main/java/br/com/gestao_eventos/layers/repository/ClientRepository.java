@@ -9,4 +9,5 @@ import br.com.gestao_eventos.layers.domain.ClientEntity;
 
 public interface ClientRepository extends JpaRepository<ClientEntity, UUID> {
     Optional<ClientEntity> findByCpfOrEmail(String cpf, String email);
+    Optional<ClientEntity> findByEmail(String email);
 }
