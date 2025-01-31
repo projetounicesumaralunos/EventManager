@@ -21,7 +21,6 @@ public class AuthCompanyController {
     @Autowired
     private AuthCompanyUseCase authCompanyUseCase;
 
-
     @PostMapping("/company")
     public ResponseEntity<Object> create(@RequestBody AuthCompanyDTO authCompanyDTO){
         try {

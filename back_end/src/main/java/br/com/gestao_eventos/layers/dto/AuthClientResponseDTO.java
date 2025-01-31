@@ -1,5 +1,7 @@
 package br.com.gestao_eventos.layers.dto;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,5 +14,6 @@ import lombok.NoArgsConstructor;
 public class AuthClientResponseDTO {
 
     private String access_token;
+    private Long expires_in;
     
 }

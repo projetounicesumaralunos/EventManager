@@ -43,6 +43,7 @@ public class AuthClientUseCase {
         }
 
         Algorithm algorithm = Algorithm.HMAC256(secretKey);
+        var expiresIn = Instant.now().plus(Duration.ofMinutes(10));
         var token = JWT.create()
         .withIssuer("Techmdl")
         .withSubject(client.getId().toString())
@@ -52,6 +53,7 @@ public class AuthClientUseCase {
 
         var authClientResponse = AuthClientResponseDTO.builder()
         .access_token(token)
+        .expires_in(expiresIn.toEpochMilli())
         .build();
 
         return authClientResponse;
