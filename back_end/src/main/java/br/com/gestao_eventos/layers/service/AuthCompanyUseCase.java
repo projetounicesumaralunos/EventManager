@@ -15,7 +15,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 
 import br.com.gestao_eventos.layers.dto.AuthCompanyDTO;
-import br.com.gestao_eventos.layers.repository.CompanyRepository;
+import br.com.gestao_eventos.layers.repositories.CompanyRepository;
 
 @Service
 public class AuthCompanyUseCase {

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.gestao_eventos.layers.domain.CompanyEntity;
 import br.com.gestao_eventos.layers.exceptions.UserFoundException;
-import br.com.gestao_eventos.layers.repository.CompanyRepository;
+import br.com.gestao_eventos.layers.repositories.CompanyRepository;
 
 @Service
 public class CreateCompanyUseCase {

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.gestao_eventos.layers.domain.EventEntity;
-import br.com.gestao_eventos.layers.repository.EventRepository;
+import br.com.gestao_eventos.layers.repositories.EventRepository;
 
 @Service
 public class CreateEventUseCase {

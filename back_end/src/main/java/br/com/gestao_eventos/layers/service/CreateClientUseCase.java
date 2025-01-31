@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.gestao_eventos.layers.domain.ClientEntity;
 import br.com.gestao_eventos.layers.exceptions.UserFoundException;
-import br.com.gestao_eventos.layers.repository.ClientRepository;
+import br.com.gestao_eventos.layers.repositories.ClientRepository;
 
 @Service
 public class CreateClientUseCase {
