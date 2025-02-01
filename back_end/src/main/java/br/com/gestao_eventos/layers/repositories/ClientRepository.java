@@ -1,4 +1,4 @@
-package br.com.gestao_eventos.layers.repository;
+package br.com.gestao_eventos.layers.repositories;
 
 import java.util.Optional;
 import java.util.UUID;

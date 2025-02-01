@@ -16,7 +16,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import br.com.gestao_eventos.layers.dto.AuthClientRequestDTO;
 import br.com.gestao_eventos.layers.dto.AuthClientResponseDTO;
 import br.com.gestao_eventos.layers.exceptions.UserFoundException;
-import br.com.gestao_eventos.layers.repository.ClientRepository;
+import br.com.gestao_eventos.layers.repositories.ClientRepository;
 
 @Service
 public class AuthClientUseCase {
