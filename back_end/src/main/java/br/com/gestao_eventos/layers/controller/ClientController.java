@@ -44,7 +44,7 @@ public class ClientController {
             var profile = this.profileClientUseCase.execute(UUID.fromString(idClient.toString()));
             return ResponseEntity.ok().body(profile);
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().body(e.getMessage()); 
         }
     }
 }

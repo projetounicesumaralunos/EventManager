@@ -13,8 +13,13 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 @Configuration
 public class SecurityConfig {
 
+
     @Autowired
     private SecurityFilter securityFilter;
+
+    @Autowired
+    private SecurityClientFilter securityClientFilter;
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http)throws Exception
     {
@@ -25,11 +30,13 @@ public class SecurityConfig {
                 .requestMatchers("/client/").permitAll()
                 .requestMatchers("/company/").permitAll()
                 .requestMatchers("/event/").permitAll()
-                .requestMatchers("/auth/company").permitAll()
-                .requestMatchers("/auth/client").permitAll();
+                .requestMatchers("/company/auth").permitAll()
+                .requestMatchers("/client/auth").permitAll();
             auth.anyRequest().authenticated();
             
-        }).addFilterBefore(securityFilter, BasicAuthenticationFilter.class)
+                })
+                .addFilterBefore(securityClientFilter, BasicAuthenticationFilter.class)
+                .addFilterBefore(securityFilter, BasicAuthenticationFilter.class)
         ;
         return http.build();
     }

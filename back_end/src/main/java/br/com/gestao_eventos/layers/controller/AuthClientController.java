@@ -12,13 +12,13 @@ import br.com.gestao_eventos.layers.dto.AuthClientRequestDTO;
 import br.com.gestao_eventos.layers.service.AuthClientUseCase;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/client")
 public class AuthClientController {
     
     @Autowired
     private AuthClientUseCase  authClientUseCase;
     
-    @PostMapping("/client")
+    @PostMapping("/auth")
     public ResponseEntity<Object> auth(@RequestBody AuthClientRequestDTO authClientRequestDTO){
 
         try {
